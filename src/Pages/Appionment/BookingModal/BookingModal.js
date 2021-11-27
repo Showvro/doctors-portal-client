@@ -30,7 +30,7 @@ const BookingModal = ({
   date,
   setBookingSuccess,
 }) => {
-  const { name, time } = booking;
+  const { name, time, price } = booking;
   const { user } = useAuth();
 
   const initialInfo = {
@@ -47,6 +47,7 @@ const BookingModal = ({
       time,
       serviceName: name,
       date: date.toLocaleDateString(),
+      price,
     };
 
     fetch("http://localhost:9999/appoinments", {
